@@ -1,16 +1,26 @@
-const TEMPERATURA_BASE = 26;
+const tempBase = 26;
 
-const temp = prompt('Qual a Temperatura hoje');
+const h3 = document.querySelector('h3');
+let perg = document.querySelector('.pergunta');
+perg.classList.add('active');
+const form = document.querySelector('form');
 
-let span = document.querySelector('.tempo');
+form.onsubmit = (event) => {
+    event.preventDefault();
+    const temp = Number(document.querySelector('#temp').value);
 
-if(temp <= 25 ) {
-    span.innerText = 'Frio'
-    span.style.color = 'darkblue'
-} else if(temp >= 26 && temp <= 37) {
-    span.innerText = 'Quente'
-    span.style.color = 'red'
-} else {
-    span.innerText = 'inferno'
-    span.style.color = 'darkred'
-}
+    // Com operador ternário:
+    let escreverTemp = temp === tempBase ? h3.innerText = 'Ameno': temp > tempBase ? h3.innerText = 'Quente' : h3.innerText = 'Frio';
+    h3.style.display = 'block';
+};
+
+// Com if e else:
+// if (temp === tempBase) {
+//     span.innerText = 'Ameno';
+// }
+// else if (temp > tempBase){
+//     span.innerText = 'Quente';
+// }
+// else {
+//     span.innerText = 'Frio';
+// };
