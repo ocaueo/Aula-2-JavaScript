@@ -1,11 +1,30 @@
-*{
+* {
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
 }
 
-.h3-tempo{
-    
-    font-size: 23px;
-    padding-left: 595px;
-    padding-top: 240px;
+/* Ta bugado porcausa do LiveServer */
+.pergunta {
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px #00000035;
+    position: fixed;
+    top: 50%;
+    left: calc(60% - 150px);
+    transform: translateY(-50%);
+    padding: 16px;
+    transition-duration: 500ms;
+    transition-delay: 1s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.pergunta.active{
+    left: calc(50% - 150px);
+    opacity: 1;
+    visibility: visible;
+}
+
+h3 {
+    display: none;
 }
